@@ -13,7 +13,15 @@ function getGithubInfo(username) {
   var xml = new XMLHttpRequest();
   xml.open('GET', url, false);
   xml.send();
+  showUser(xml);
+}
 
-  var data = xml.responseText;
-  console.log(data);
+function showUser(xml) {
+  if(xml.status === 200) {
+    var json = xml.responseText;
+    var user = JSON.parse(json);
+    console.log(user);
+  } else {
+    console.log('Error');
+  }
 }
