@@ -23,6 +23,7 @@ function showUser(xml) {
     console.log(user);
     $('#profile h2').append(user.login + ' is GitHub user # ' + user.id);
     $('#profile #information').append('<a href=\'' + user.html_url + '\'>' + user.html_url + '</a>');
+    $('#profile #avatar').append('<img src=\'' + user.avatar_url + '\' alt=\'' + user.login + '\'>');
   } else {
     console.log('Error');
   }
