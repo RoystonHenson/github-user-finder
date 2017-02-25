@@ -11,7 +11,7 @@ $(document).ready(function() {
 function getGithubInfo(username) {
   var url = 'https://api.github.com/users/' + username;
   var xml = new XMLHttpRequest();
-  xml.open('GET', url, false);
+  xml.open('GET', url, true);
   xml.send();
   showUser(xml);
 }
@@ -25,6 +25,6 @@ function showUser(xml) {
     $('#profile #information').append('<a href=\'' + user.html_url + '\'>' + user.html_url + '</a>');
     $('#profile #avatar').append('<img src=\'' + user.avatar_url + '\' alt=\'' + user.login + '\'>');
   } else {
-    console.log('Error');
+    $('#profile h2').append('No such user!');
   }
 }
