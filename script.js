@@ -22,6 +22,7 @@ function showUser(xml) {
     var user = JSON.parse(json);
     console.log(user);
     $('#profile h2').append(user.login + ' is GitHub user # ' + user.id);
+    $('#profile #information').append('<a href=\'' + user.html_url + '\'>' + user.html_url + '</a>');
   } else {
     console.log('Error');
   }
