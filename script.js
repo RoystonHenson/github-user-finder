@@ -21,6 +21,7 @@ function showUser(xml) {
     var json = xml.responseText;
     var user = JSON.parse(json);
     console.log(user);
+    $('#profile h2').append(user.login + ' is GitHub user # ' + user.id);
   } else {
     console.log('Error');
   }
